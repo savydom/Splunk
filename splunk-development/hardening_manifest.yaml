@@ -1,0 +1,152 @@
+---
+apiVersion: v1
+
+name: "splunk/splunk/splunk"
+
+tags:
+- "8.2.3"
+- "latest"
+
+args:
+  BASE_IMAGE: "redhat/ubi/ubi8-minimal"
+  BASE_TAG: "8.4"
+
+labels:
+  org.opencontainers.image.title: "splunk"
+  org.opencontainers.image.description: "Splunk Enterprise is a platform for operational intelligence. Our software lets you collect, analyze, and act upon the untapped value of big data that your technology infrastructure, security systems, and business applications generate. It gives you insights to drive operational performance and business results."
+  org.opencontainers.image.licenses: "Commercial"
+  org.opencontainers.image.url: "https://www.splunk.com/en_us/legal/splunk-terms-overview.html"
+  org.opencontainers.image.vendor: "Splunk"
+  org.opencontainers.image.version: "8.2.3"
+  mil.dso.ironbank.image.keywords: "security,data,itops"
+  mil.dso.ironbank.image.type: "commercial"
+  mil.dso.ironbank.product.name: "Splunk Enterprise"
+
+resources:
+- url: https://github.com/splunk/splunk-ansible/archive/8.2.3.tar.gz
+  filename: splunk-ansible.tar.gz
+  validation:
+    type: sha256
+    value: 23e82605bb9e28fa50ce2c6effec192b7e6024922bb9ec9abebbe823cfd8694e               
+- url: https://download.splunk.com/products/splunk/releases/8.2.3/linux/splunk-8.2.3-cd0848707637-Linux-x86_64.tgz
+  filename: splunk-8.2.3-cd0848707637-Linux-x86_64.tgz
+  validation:
+    type: sha256
+    value: bb1990931bd44f2cdb0cc50002b5cf0a6cafca99c7c651f07db77a1d2df2ed12           
+- url: https://github.com/splunk/splunk-cloud-sdk-go/releases/download/v1.11.1/scloud_v7.1.0_linux_amd64.tar.gz
+  filename: scloud_v7.1.0_linux_amd64.tar.gz
+  validation:
+    type: sha256
+    value: b1f47cb2ffd17fe87f07599c88da42a07e4c51e3c37986e4bb0509000e1344a9            
+- url: https://files.pythonhosted.org/packages/6b/47/c14abc08432ab22dc18b9892252efaf005ab44066de871e72a38d6af464b/requests-2.25.1.tar.gz
+  filename: requests-2.25.1.tar.gz
+  validation:
+    type: sha256
+    value: 27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804           
+- url: https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tgz
+  filename: Python-3.7.10.tgz
+  validation:
+    type: sha256
+    value: c9649ad84dc3a434c8637df6963100b2e5608697f9ba56d82e3809e4148e0975          
+- url: https://files.pythonhosted.org/packages/be/1a/f40e97f4c400eec75813bc492f1d6226cd413bf03f88d5f00070a1e699a3/ansible-core-2.11.6.tar.gz
+  filename: ansible-core-2.11.6.tar.gz
+  validation:
+    type: sha256
+    value: 93d50283c7c5b476debf83dc089b3f679b939a8b9a7b5d628d28daafbb3d303a           
+- url: https://files.pythonhosted.org/packages/81/b6/2f27c1b1b61b12b718375e79620da9d7b2cb9a07331fd455ee36cfb17734/ansible-4.6.0.tar.gz
+  filename: ansible-4.6.0.tar.gz
+  validation:
+    type: sha256
+    value: 2955fcbf51367f8bd88c38a86f8be83d4fcd05f778afb4feed31abfe8dcff639            
+- url: https://files.pythonhosted.org/packages/3e/89/7ea760b4daa42653ece2380531c90f64788d979110a2ab51049d92f408af/packaging-20.9-py2.py3-none-any.whl
+  filename: packaging-20.9-py2.py3-none-any.whl
+  validation:
+    type: sha256
+    value: 67714da7f7bc052e064859c05c595155bd1ee9f69f76557e21f051443c20947a          
+- url: https://files.pythonhosted.org/packages/eb/11/bda2b7dee2c84d1f1923ae273023bb94d3e5ab3d1a46b4bd8cf5eb81a241/resolvelib-0.5.4-py2.py3-none-any.whl
+  filename: resolvelib-0.5.4-py2.py3-none-any.whl
+  validation:
+    type: sha256
+    value: 8113ae3ed6d33c6be0bcbf03ffeb06c0995c099b7b8aaa5ddf2e9b3b3df4e915           
+- url: https://files.pythonhosted.org/packages/ed/46/e298a50dde405e1c202e316fa6a3015ff9288423661d7ea5e8f22f589071/wheel-0.36.2.tar.gz
+  filename: wheel-0.36.2.tar.gz
+  validation:
+    type: sha256
+    value: e11eefd162658ea59a60a0f6c7d493a7190ea4b9a85e335b33489d9f17e0245e           
+- url: https://files.pythonhosted.org/packages/3c/56/3f325b1eef9791759784aa5046a8f6a1aff8f7c898a2e34506771d3b99d8/jmespath-0.10.0.tar.gz
+  filename: jmespath-0.10.0.tar.gz
+  validation:
+    type: sha256
+    value: b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9          
+- url: https://files.pythonhosted.org/packages/bf/10/ff66fea6d1788c458663a84d88787bae15d45daa16f6b3ef33322a51fc7e/MarkupSafe-2.0.1.tar.gz
+  filename: MarkupSafe-2.0.1.tar.gz
+  validation:
+    type: sha256
+    value: 594c67807fb16238b30c44bdf74f36c02cdf22d1c8cda91ef8a0ed8dabf5620a          
+- url: https://files.pythonhosted.org/packages/7a/a5/393c087efdc78091afa2af9f1378762f9821c9c1d7a22c5753fb5ac5f97a/PyYAML-5.4.1-cp37-cp37m-manylinux1_x86_64.whl
+  filename: PyYAML-5.4.1-cp37-cp37m-manylinux1_x86_64.whl
+  validation:
+    type: sha256
+    value: e1d4970ea66be07ae37a3c2e48b5ec63f7ba6804bdddfdbd3cfd954d25a82e63        
+- url: https://files.pythonhosted.org/packages/7a/0c/23cbcf515b5394e9f59a3e6629f26e1142b92d474ee0725a26aa5a3bcf76/Jinja2-3.0.0.tar.gz
+  filename: Jinja2-3.0.0.tar.gz
+  validation:
+    type: sha256
+    value: ea8d7dd814ce9df6de6a761ec7f1cac98afe305b8cdc4aaae4e114b8d8ce24c5           
+- url: https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz
+  filename: pyparsing-2.4.7.tar.gz
+  validation:
+    type: sha256
+    value: c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1          
+- url: https://files.pythonhosted.org/packages/94/40/c396b5b212533716949a4d295f91a4c100d51ba95ea9e2d96b6b0517e5a5/urllib3-1.26.5.tar.gz
+  filename: urllib3-1.26.5.tar.gz
+  validation:
+    type: sha256
+    value: a7acd0977125325f516bda9735fa7142b909a8d01e8b2e4c8108d0984e6e0098        
+- url: https://files.pythonhosted.org/packages/ee/2d/9cdc2b527e127b4c9db64b86647d567985940ac3698eeabc7ffaccb4ea61/chardet-4.0.0.tar.gz
+  filename: chardet-4.0.0.tar.gz
+  validation:
+    type: sha256
+    value: 0d6f53a15db4120f2b08c94f11e7d93d2c911ee118b6b30a04ec3ee8310179fa         
+- url: https://files.pythonhosted.org/packages/06/a9/cd1fd8ee13f73a4d4f491ee219deeeae20afefa914dfb4c130cfc9dc397a/certifi-2020.12.5.tar.gz
+  filename: certifi-2020.12.5.tar.gz
+  validation:
+    type: sha256
+    value: 1a4995114262bffbc2413b159f2a1a480c969de6e6eb13ee966d470af86af59c           
+- url: https://files.pythonhosted.org/packages/9f/24/1444ee2c9aee531783c031072a273182109c6800320868ab87675d147a05/idna-3.1.tar.gz
+  filename: idna-3.1.tar.gz
+  validation:
+    type: sha256
+    value: c5b02147e01ea9920e6b0a3f1f7bb833612d507592c837a6c49552768f4054e1         
+- url: https://files.pythonhosted.org/packages/b2/26/7af637e6a7e87258b963f1731c5982fb31cd507f0d90d91836e446955d02/cryptography-3.4.7-cp36-abi3-manylinux2014_x86_64.whl
+  filename: cryptography-3.4.7-cp36-abi3-manylinux2014_x86_64.whl
+  validation:
+    type: sha256
+    value: 1e056c28420c072c5e3cb36e2b23ee55e260cb04eee08f702e0edfec3fb51959           
+- url: https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz
+  filename: six-1.16.0.tar.gz
+  validation:
+    type: sha256
+    value: 1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926          
+- url: https://files.pythonhosted.org/packages/a8/20/025f59f929bbcaa579704f443a438135918484fffaacfaddba776b374563/cffi-1.14.5.tar.gz
+  filename: cffi-1.14.5.tar.gz
+  validation:
+    type: sha256
+    value: fd78e5fee591709f32ef6edb9a015b4aa1a5022598e36227500c8f4e02328d9c            
+- url: https://files.pythonhosted.org/packages/0f/86/e19659527668d70be91d0369aeaa055b4eb396b0f387a4f92293a20035bd/pycparser-2.20.tar.gz
+  filename: pycparser-2.20.tar.gz
+  validation:
+    type: sha256
+    value: 2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0
+- url: https://repo1.dso.mil/dsop/redhat/ubi/ubi8/-/archive/development/ubi8-development.tar.gz
+  filename: ubi8-development.tar.gz
+  validation:
+    type: sha256
+    value: ba1452ca13805fda20f21f0074dce7f9cff93dcc42f32bcb1b87621a79a7d9d9
+
+maintainers:
+- name: "Bryan Pluta"
+  username: "bpluta"
+  email: "bpluta@splunk.com"
+
+
