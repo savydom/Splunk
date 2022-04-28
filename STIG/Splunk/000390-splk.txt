@@ -1,0 +1,23 @@
+
+
+echo "Run the following command from the server command line:
+Note: Run this command as the account of last resort, as no other local user accounts should exist.
+
+splunk show fips-mode -auth <username>:<password>
+
+Verify that the command returns FIPS mode enabled.
+
+If the command returns FIPS mode disabled, this is a finding.
+STIG 000390"
+
+more  /opt/splunk/etc/splunk-launch.conf
+
+echo "Run the following command from the server command line:
+Note: Run this command as the account of last resort, as no other local user accounts should exist.
+
+splunk show fips-mode -auth <username>:<password>
+
+Verify that the command returns FIPS mode enabled.
+
+If the command returns FIPS mode disabled, this is a finding.
+STIG 000390"

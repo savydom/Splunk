@@ -1,0 +1,24 @@
+
+
+echo "
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the authentication.conf file.
+
+If the authentication.conf file does not exist, this is a finding.
+
+If the "minPasswordLowercase" is missing or is configured to 0, this is a finding.
+ STIG 000350"
+
+grep minPasswordLowercase* /opt/splunk/etc/system/local/authentication.conf
+
+
+echo "
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the authentication.conf file.
+
+If the authentication.conf file does not exist, this is a finding.
+
+If the "minPasswordLowercase" is missing or is configured to 0, this is a finding.
+ STIG 000350"

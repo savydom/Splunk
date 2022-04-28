@@ -1,0 +1,36 @@
+
+
+echo "
+This check is performed on the machine used as a search head, which may be a separate machine in a distributed environment.
+
+If the instance being reviewed is not used as a search head, this check in N/A.
+
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the web.conf file.
+
+If the web.conf file does not exist, this is a finding.
+
+If the "tools.sessions.timeout" is missing or is configured to 16 or more, this is a finding.
+
+
+STIG 000010
+"
+
+grep timeout /opt/splunk/etc/system/local/web.conf
+
+echo "
+This check is performed on the machine used as a search head, which may be a separate machine in a distributed environment.
+
+If the instance being reviewed is not used as a search head, this check in N/A.
+
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the web.conf file.
+
+If the web.conf file does not exist, this is a finding.
+
+If the "tools.sessions.timeout" is missing or is configured to 16 or more, this is a finding.
+
+STIG 000010
+"

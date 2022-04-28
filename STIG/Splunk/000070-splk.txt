@@ -1,0 +1,28 @@
+
+
+echo "
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the authentication.conf file.
+
+If the authentication.conf file does not exist, this is a finding.
+
+If the "lockoutUsers" is missing or is configured to 0 or False, this is a finding.
+
+
+STIG 000070
+"
+
+grep lockoutUsers /etc/opt/splunk/system/local/authentication.conf
+
+echo "
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the authentication.conf file.
+
+If the authentication.conf file does not exist, this is a finding.
+
+If the "lockoutUsers" is missing or is configured to 0 or False, this is a finding.
+
+STIG 000070
+"

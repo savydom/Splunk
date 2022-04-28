@@ -1,0 +1,57 @@
+
+
+echo " Check the following files in the installation to verify Splunk uses SSL certificates for communication between the indexer and the forwarder:
+
+This check is performed on the machine used as an indexer, which may be a separate machine in a distributed environment.
+
+/etc/system/local/inputs.conf
+
+[splunktcp-ssl:9997]
+disabled = 0
+
+[SSL]
+serverCert = <path to the DoD approved certificate in PEM format>
+sslPassword = <password for the certificate>
+
+If these settings are misconfigured, this is a finding.
+
+This configuration is performed on the machine used as a forwarder, which is always a separate machine regardless of environment.
+
+/etc/system/local/outputs.conf
+
+[tcpout:group1]
+disabled = 0
+clientCert = <path to the DoD approved certificate in PEM format>
+sslPassword = <password for the certificate>
+
+If these settings are misconfigured, this is a finding
+STIG 000460"
+
+grep client* /opt/splunk/etc/apps/org_forwarder_outputs/local/outputs.conf
+
+echo " Check the following files in the installation to verify Splunk uses SSL certificates for communication between the indexer and the forwarder:
+
+This check is performed on the machine used as an indexer, which may be a separate machine in a distributed environment.
+
+/etc/system/local/inputs.conf
+
+[splunktcp-ssl:9997]
+disabled = 0
+
+[SSL]
+serverCert = <path to the DoD approved certificate in PEM format>
+sslPassword = <password for the certificate>
+
+If these settings are misconfigured, this is a finding.
+
+This configuration is performed on the machine used as a forwarder, which is always a separate machine regardless of environment.
+
+/etc/system/local/outputs.conf
+
+[tcpout:group1]
+disabled = 0
+clientCert = <path to the DoD approved certificate in PEM format>
+sslPassword = <password for the certificate>
+
+If these settings are misconfigured, this is a finding
+STIG 000460"

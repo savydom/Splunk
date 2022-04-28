@@ -1,0 +1,38 @@
+
+
+echo "
+This check is performed on the machine used as an indexer, which may be a separate machine in a distributed environment.
+
+If the instance being reviewed is not used as an indexer, this check is N/A.
+
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the indexes.conf file.
+
+If the indexes.conf file does not exist, this is a finding.
+
+If the "enableDataIntegrity" is missing or is configured to 0 or false for each index, this is a finding.
+
+
+
+STIG 000090
+"
+
+grep enableDataIntegrity /etc/opt/splunk/system/local/indexes.conf
+
+echo "
+This check is performed on the machine used as an indexer, which may be a separate machine in a distributed environment.
+
+If the instance being reviewed is not used as an indexer, this check is N/A.
+
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the indexes.conf file.
+
+If the indexes.conf file does not exist, this is a finding.
+
+If the "enableDataIntegrity" is missing or is configured to 0 or false for each index, this is a finding.
+
+
+STIG 000090
+"

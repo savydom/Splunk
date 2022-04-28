@@ -1,0 +1,23 @@
+
+
+echo "
+If authorized individuals do not have the ability to modify auditing parameters in response to a changing threat environment, the organization may not be able to respond effectively and important forensic information may be lost.
+
+The organization must define and document log retention requirements for each device and host and then configure Splunk Enterprise to comply with the required retention period.
+
+This requirement enables organizations to extend or limit auditing as necessary to meet organizational requirements. Auditing that is limited to conserve information system resources may be extended to address certain threat situations.
+
+STIG 000120
+"
+
+grep frozenTimePeriodInSecs* /etc/opt/splunk/system/local/indexes.conf
+
+echo "
+If authorized individuals do not have the ability to modify auditing parameters in response to a changing threat environment, the organization may not be able to respond effectively and important forensic information may be lost.
+
+The organization must define and document log retention requirements for each device and host and then configure Splunk Enterprise to comply with the required retention period.
+
+This requirement enables organizations to extend or limit auditing as necessary to meet organizational requirements. Auditing that is limited to conserve information system resources may be extended to address certain threat situations.
+
+STIG 000120
+"

@@ -1,0 +1,21 @@
+
+
+echo " Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the authentication.conf file.
+
+If the authentication.conf file does not exist, this is a finding.
+
+If the "expirePasswordDays" is missing or is configured to 61 or more, this is a finding.
+STIG 000400"
+
+ grep expirePasswordDays* /opt/splunk/etc/system/local/authentication.conf
+
+echo " Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the authentication.conf file.
+
+If the authentication.conf file does not exist, this is a finding.
+
+If the "expirePasswordDays" is missing or is configured to 61 or more, this is a finding.
+STIG 000400"

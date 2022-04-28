@@ -1,0 +1,32 @@
+
+
+echo "
+Verify the Splunk Enterprise Environment is configured to offload log records to an external source.
+
+On the forwarder, check that the outputs.conf file is configured with the details of the source that the logs will be sent to (e.g. Hostname, port# etc.).
+
+If the Splunk Enterprise is not configured to offload log records to an external source, this is a finding.
+
+STIG 000150
+"
+
+#hostname
+HOSTNAME=$(hostname)
+
+if [[ "$HOSTNAME" == *sh* ]]; then
+more /opt/splunk/etc/apps/org_forwarder_outputs/local/outputs.conf
+elif [[ "$HOSTNAME" == *ind* ]]; then
+more /opt/splunk/etc/apps/org_forwarder_outputs/local/inputs.conf
+else
+echo "STIG does not apply"
+fi
+
+echo "
+Verify the Splunk Enterprise Environment is configured to offload log records to an external source.
+
+On the forwarder, check that the outputs.conf file is configured with the details of the source that the logs will be sent to (e.g. Hostname, port# etc.).
+
+If the Splunk Enterprise is not configured to offload log records to an external source, this is a finding.
+
+STIG 000150
+"

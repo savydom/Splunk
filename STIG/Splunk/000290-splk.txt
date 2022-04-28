@@ -1,0 +1,40 @@
+
+
+echo "
+Execute a search query in Splunk using the following:
+
+index=_internal source=*metrics.log* group=tcpin_connections | dedup hostname | table _time hostname sourceIp destPort ssl
+
+Verify that the report returns ssl = true for every item listed.
+
+Navigate to /etc/opt/system/local/web.conf and verify the enableSplunkWebSSL is set to 1.
+
+If the report returns ssl = false for any item, and/or If enableSplunkWebSSL is not set, this is a finding.
+
+STIG 000290
+"
+
+#hostname
+HOSTNAME=$(hostname)
+
+if [[ "$HOSTNAME" == *sh* ]]; then
+grep client* /opt/splunk/etc/apps/org_forwarder_outputs/local/outputs.conf ; grep privKeyPath* /opt/splunk/etc/system/local/web.conf ; grep serverCer* /opt/splunk/etc/system/local/web.conf
+elif [[ "$HOSTNAME" == *ind* ]]; then
+grep disabled* /opt/splunk/etc/apps/org_forwarder_outputs/local/inputs.conf ; grep clientCert* /opt/splunk/etc/apps/org_forwarder_outputs/local/inputs.conf ; grep sslPassword* /opt/splunk/etc/apps/org_forwarder_outputs/local/inputs.conf
+else
+echo "STIG does not apply"
+fi
+
+echo "
+Execute a search query in Splunk using the following:
+
+index=_internal source=*metrics.log* group=tcpin_connections | dedup hostname | table _time hostname sourceIp destPort ssl
+
+Verify that the report returns ssl = true for every item listed.
+
+Navigate to /etc/opt/system/local/web.conf and verify the enableSplunkWebSSL is set to 1.
+
+If the report returns ssl = false for any item, and/or If enableSplunkWebSSL is not set, this is a finding.
+
+STIG 000290
+"

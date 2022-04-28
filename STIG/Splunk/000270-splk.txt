@@ -1,0 +1,31 @@
+
+
+echo "
+This check is performed on the machine used as an indexer, which may be a separate machine in a distributed environment.
+
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the inputs.conf file.
+
+If any input is configured to use a UDP port, this is a finding.
+STIG 000270"
+
+
+#hostname
+HOSTNAME=$(hostname)
+
+if [[ "$HOSTNAME" == *ind* ]]; then
+grep *udp* /opt/splunk/etc/apps/org_forwarder_outputs/local/inputs.conf
+else
+echo "STIG does not apply"
+fi
+
+echo "
+This check is performed on the machine used as an indexer, which may be a separate machine in a distributed environment.
+
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the inputs.conf file.
+
+If any input is configured to use a UDP port, this is a finding.
+STIG 000270"

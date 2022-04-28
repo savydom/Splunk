@@ -1,0 +1,40 @@
+
+
+echo "
+This check is performed on the machine used as a search head or a deployment server, which may be a separate machine in a distributed environment.
+
+Check the following file in the installation to verify Splunk is set to use SSL and certificates:
+
+/etc/opt/system/local/web.conf
+
+[settings]
+enableSplunkWebSSL = 1
+privKeyPath = <path to the private key generated for the DoD approved certificate>
+serverCert = <path to the DoD approved certificate in PEM format>
+
+If the settings are not configured to use SSL and certificates, this is a finding.
+STIG 000330 "
+
+#hostname
+HOSTNAME=$(hostname)
+
+if [[ "$HOSTNAME" == *-sh-* ]]; then
+grep enableSplunkWebSSL* /opt/splunk/etc/system/local/web.conf ; grep privKeyPath* /opt/splunk/etc/system/local/web.conf ; grep serverCer* /opt/splunk/etc/system/local/web.conf
+else
+echo "STIG does not apply"
+fi
+
+echo "
+This check is performed on the machine used as a search head or a deployment server, which may be a separate machine in a distributed environment.
+
+Check the following file in the installation to verify Splunk is set to use SSL and certificates:
+
+/etc/opt/system/local/web.conf
+
+[settings]
+enableSplunkWebSSL = 1
+privKeyPath = <path to the private key generated for the DoD approved certificate>
+serverCert = <path to the DoD approved certificate in PEM format>
+
+If the settings are not configured to use SSL and certificates, this is a finding.
+STIG 000330 "

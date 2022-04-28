@@ -1,0 +1,30 @@
+
+
+echo "
+This check is performed on the machine used as a search head, which may be a separate machine in a distributed environment.
+
+If the instance being reviewed is not used as a search head, this check in N/A.
+
+Verify that the Standard Mandatory DoD Notice and Consent Banner appears before being granted access to Splunk Enterprise.
+
+If the Standard Mandatory DoD Notice and Consent Banner is not presented, this is a finding.
+
+
+
+STIG 000080
+"
+
+splunk show shcluster-status --verbose
+
+echo "
+This check is performed on the machine used as a search head, which may be a separate machine in a distributed environment.
+
+If the instance being reviewed is not used as a search head, this check in N/A.
+
+Verify that the Standard Mandatory DoD Notice and Consent Banner appears before being granted access to Splunk Enterprise.
+
+If the Standard Mandatory DoD Notice and Consent Banner is not presented, this is a finding.
+
+
+STIG 000080
+"

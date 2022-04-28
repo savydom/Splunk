@@ -1,0 +1,50 @@
+
+
+echo "
+ This check is applicable to the instance with the Search Head role, which may be a different instance in a distributed environment.
+
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the authentication.conf file.
+
+If the authentication.conf file does not exist, this is a finding.
+
+If the "lockoutAttempts" is missing or is configured to more than 3, this is a finding.
+
+If the "lockoutThresholdMins" is missing or is configured to less than 15, this is a finding.
+
+Fix Text: If the authentication.conf file does not exist, copy the file from /etc/opt/splunk/system/default to the /etc/opt/splunk/system/local directory.
+
+Modify the following lines in the authentication.conf file under the [splunk_auth]:
+
+lockoutAttempts = 3
+lockoutThresholdMins = 15
+
+
+STIG 000060
+"
+
+grep lockoutUsers* /opt/splunk/etc/system/local/authentication.conf
+
+echo "
+ This check is applicable to the instance with the Search Head role, which may be a different instance in a distributed environment.
+
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the authentication.conf file.
+
+If the authentication.conf file does not exist, this is a finding.
+
+If the "lockoutAttempts" is missing or is configured to more than 3, this is a finding.
+
+If the "lockoutThresholdMins" is missing or is configured to less than 15, this is a finding.
+
+Fix Text: If the authentication.conf file does not exist, copy the file from /etc/opt/splunk/system/default to the /etc/opt/splunk/system/local directory.
+
+Modify the following lines in the authentication.conf file under the [splunk_auth]:
+
+lockoutAttempts = 3
+lockoutThresholdMins = 15
+
+STIG 000060
+"

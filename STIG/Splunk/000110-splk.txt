@@ -1,0 +1,21 @@
+
+ 
+ echo "
+ Log servers (e.g., syslog servers) are often used on network segments to consolidate from the devices and hosts on that network segment. However, this does not achieve compliance with the DoD requirement for a centralized enclave log server.
+To comply with this requirement, create a central log server that aggregates multiple log servers, or use another method to ensure log analysis and management is centrally managed and available to enterprise forensics and analysis tools. This server is often called a log aggregator, SIEM, or events server.
+
+STIG 000110
+"
+
+ 
+ 
+ 
+ 
+ grep server*/opt/splunk/etc/apps/org_forwarder_outputs/local/outputs.conf
+
+  echo "
+ Log servers (e.g., syslog servers) are often used on network segments to consolidate from the devices and hosts on that network segment. However, this does not achieve compliance with the DoD requirement for a centralized enclave log server.
+To comply with this requirement, create a central log server that aggregates multiple log servers, or use another method to ensure log analysis and management is centrally managed and available to enterprise forensics and analysis tools. This server is often called a log aggregator, SIEM, or events server.
+
+STIG 000110
+"

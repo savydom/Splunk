@@ -1,0 +1,25 @@
+
+
+echo "Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the authentication.conf file.
+
+If the authentication.conf file does not exist, this is a finding.
+
+If the "enablePasswordHistory" is missing or is configured to False, this is a finding.
+
+If the "passwordHistoryCount" is missing or is configured to 4 or less, this is a finding.
+STIG 000410"
+
+ grep enablePasswordHistory* /opt/splunk/etc/system/local/authentication.conf ; grep passwordHistoryCount* /opt/splunk/etc/system/local/authentication.conf
+
+echo "Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the authentication.conf file.
+
+If the authentication.conf file does not exist, this is a finding.
+
+If the "enablePasswordHistory" is missing or is configured to False, this is a finding.
+
+If the "passwordHistoryCount" is missing or is configured to 4 or less, this is a finding.
+STIG 000410"

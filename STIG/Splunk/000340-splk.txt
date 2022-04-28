@@ -1,0 +1,36 @@
+
+
+echo "
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the authentication.conf file.
+
+If the authentication.conf file does not exist, this is a finding.
+
+If the "minPasswordUppercase" is missing or is configured to 0, this is a finding.
+
+Fix Text: If the authentication.conf file does not exist, copy the file from /etc/opt/splunk/system/default to the /etc/opt/splunk/system/local directory.
+
+Modify the following lines in the authentication.conf file under the [splunk_auth]:
+
+minPasswordUppercase = 1
+STIG 000340"
+
+
+grep minPasswordUppercase* /opt/splunk/etc/system/local/authentication.conf
+
+echo "
+Examine the configuration.
+
+Navigate to the /etc/opt/splunk/system/local/ directory. View the authentication.conf file.
+
+If the authentication.conf file does not exist, this is a finding.
+
+If the "minPasswordUppercase" is missing or is configured to 0, this is a finding.
+
+Fix Text: If the authentication.conf file does not exist, copy the file from /etc/opt/splunk/system/default to the /etc/opt/splunk/system/local directory.
+
+Modify the following lines in the authentication.conf file under the [splunk_auth]:
+
+minPasswordUppercase = 1
+STIG 000340"

@@ -1,0 +1,22 @@
+
+
+echo " On the host OS of the server, verify the properties of the certificate used by Splunk to ensure that the Issuer is the DoD trusted CA.
+
+This can be verified by the command:
+
+openssl x509 -text -inform PEM -in <name of cert>
+
+If the certificate issuer is not a DoD trusted CA, then this is a finding.
+STIG 000450"
+
+
+openssl x509 -text -inform PEM -in cacerts.pem
+
+echo " On the host OS of the server, verify the properties of the certificate used by Splunk to ensure that the Issuer is the DoD trusted CA.
+
+This can be verified by the command:
+
+openssl x509 -text -inform PEM -in <name of cert>
+
+If the certificate issuer is not a DoD trusted CA, then this is a finding.
+STIG 000450"
